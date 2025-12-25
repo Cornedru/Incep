@@ -27,8 +27,6 @@ if [ ! -f wp-config.php ]; then
         --allow-root
 
     wp user create $WP_USER $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PWD --allow-root
-	# wp option update home "https://${DOMAIN_NAME}:4443" --allow-root
-	# wp option update siteurl "https://${DOMAIN_NAME}:4443" --allow-root
 fi
 
 exec "$@"

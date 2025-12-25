@@ -15,7 +15,7 @@ services:
     networks:
       - inception
 
-  wordpress: # verifier si erreur en ajoutant un commentaire avec l'user
+  wordpress: 
     container_name: wordpress
     build: requirements/wordpress
     image: wordpress
@@ -40,7 +40,6 @@ services:
     restart: always
     env_file: .env
     ports:
-      # - 80:80 
       - "443:443"
     volumes:
       - wordpress_data:/var/www/html
@@ -56,19 +55,16 @@ volumes:
       type: none
       o: bind
       device: /home/rems/data/mariadb
-    # name: ?
   wordpress_data:
     driver: local
     driver_opts:
       type: none
       o: bind
       device: /home/rems/data/wordpress
-    # name: ?
 
 networks:
   inception:
     driver: bridge
-    # name: ?
   reverse-proxy:
     driver: bridge
 
