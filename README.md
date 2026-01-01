@@ -44,6 +44,7 @@ mkdir -p srcs/secrets
 echo "your_strong_root_password" > srcs/secrets/db_root_password.txt
 echo "your_strong_db_password" > srcs/secrets/db_password.txt
 echo "your_strong_admin_password" > srcs/secrets/wp_admin_password.txt
+echo "test" > srcs/secrets/wp_user_pwd.txt 
 chmod 600 srcs/secrets/*.txt
 ```
 
